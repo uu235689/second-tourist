@@ -1,0 +1,2441 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>小島第二天｜Travel English Lab</title>
+
+<style>
+:root{
+  --ink:#243e45;
+  --cream:#fff5db;
+  --green:#477763;
+  --line:#395b51;
+  --gold:#e3b366;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:#d9e5cf;
+  color:var(--ink);
+  font:16px/1.75 Arial,"Microsoft JhengHei",sans-serif;
+  background-image:repeating-linear-gradient(
+    45deg,#ffffff0b 0 3px,transparent 3px 9px
+  );
+}
+header{
+  background:#233f47;
+  color:#fff1cf;
+  border-bottom:5px solid #96ae88;
+  padding:15px max(20px,4vw);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+.brand{
+  font:700 21px monospace;
+  letter-spacing:2px;
+}
+.brand small{
+  display:block;
+  font:12px/1.8 Arial;
+  letter-spacing:3px;
+  color:#c1d7b3;
+}
+main{
+  max-width:1200px;
+  margin:auto;
+  padding:26px 20px 70px;
+}
+h1,h2,h3{line-height:1.4}
+h1{font-size:34px;margin:9px 0 20px}
+h2{font-size:25px;margin-top:7px}
+h3{font-size:19px}
+.eyebrow{
+  font:700 12px/1.5 monospace;
+  letter-spacing:2px;
+  color:#547560;
+}
+.panel{
+  background:var(--cream);
+  border:3px solid var(--line);
+  box-shadow:5px 5px 0 #98ac88;
+  padding:23px;
+  margin-bottom:20px;
+}
+button,input,textarea,select{font:inherit}
+button,.button{
+  cursor:pointer;
+  background:var(--green);
+  color:#fff6d8;
+  border:2px solid #294d40;
+  box-shadow:3px 3px 0 #29473d;
+  padding:10px 15px;
+  font-weight:bold;
+  margin:4px;
+  text-decoration:none;
+  display:inline-block;
+}
+button:hover,.button:hover{
+  filter:brightness(1.1);
+  transform:translateY(-1px);
+}
+button:disabled{
+  opacity:.5;
+  cursor:not-allowed;
+  transform:none;
+}
+.secondary{
+  background:#ead5a8;
+  color:var(--ink);
+}
+.ghost{
+  background:transparent;
+  color:var(--ink);
+  box-shadow:none;
+  border-color:#a4b59a;
+}
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+summary:focus-visible{
+  outline:3px solid #cd8745;
+  outline-offset:3px;
+}
+input,textarea,select{
+  width:100%;
+  padding:11px;
+  border:2px solid #92a789;
+  background:#fffdf5;
+  color:var(--ink);
+  margin:6px 0 12px;
+}
+textarea{
+  min-height:100px;
+  resize:vertical;
+}
+label{
+  display:block;
+  font-weight:bold;
+  margin-top:12px;
+}
+input[type=checkbox]{
+  width:auto;
+  margin-right:8px;
+}
+small,.muted{color:#637969}
+.layout{
+  display:grid;
+  grid-template-columns:250px minmax(0,1fr);
+  gap:24px;
+  align-items:start;
+}
+.intro{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:28px;
+  align-items:center;
+}
+.intro h1{font-size:42px}
+.stepbar{
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+  margin:14px 0;
+}
+.step{
+  padding:5px 9px;
+  background:#e3e8ce;
+  border:1px solid #a9bb9b;
+  font-size:12px;
+}
+.step.current{
+  background:#365d4f;
+  color:#fff2cf;
+}
+.step.done{background:#b6d0a5}
+.station{
+  display:block;
+  width:100%;
+  text-align:left;
+  margin:10px 0;
+  padding:12px;
+}
+.station small{
+  display:block;
+  color:inherit;
+  font-weight:normal;
+  opacity:.8;
+}
+.station.current{background:#254c43}
+.pill{
+  display:inline-block;
+  padding:4px 10px;
+  background:#e7edda;
+  border:1px solid #a3b895;
+  font-size:13px;
+  margin:3px;
+}
+.notice{
+  padding:18px;
+  background:#fffaf1;
+  border:2px dashed #9baa88;
+  line-height:1.9;
+  font-family:monospace;
+  margin:15px 0;
+}
+.npc{
+  background:#2a4650;
+  color:#fff2cf;
+  padding:18px;
+  border:3px solid #183542;
+  box-shadow:inset 0 0 0 2px #608374;
+  margin:15px 0;
+  font-size:18px;
+}
+.npc b{
+  display:block;
+  font:700 11px monospace;
+  letter-spacing:2px;
+  color:#bed9b1;
+  margin-bottom:9px;
+}
+.note{
+  background:#f3e1b1;
+  border-left:4px solid #b38d4c;
+  padding:13px;
+  margin:14px 0;
+}
+.feedback{
+  padding:14px;
+  background:#f5dfb0;
+  border:2px solid #bc9154;
+  margin:16px 0;
+  color:#7f402d;
+}
+.feedback.ok{
+  background:#e0ebce;
+  border-color:#6e9167;
+  color:#315638;
+}
+.feedback:empty{display:none}
+.btnrow{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.matchgrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+.matchcol button{
+  display:block;
+  width:100%;
+  text-align:left;
+  margin:8px 0;
+  background:#e4d4aa;
+  color:#2d4d45;
+}
+.matchcol button.selected{
+  background:#496f5c;
+  color:#fff1ce;
+}
+.matchcol button.paired{
+  background:#bad0a7;
+  border-style:dashed;
+  box-shadow:none;
+}
+.sentence{
+  background:#fffaf1;
+  min-height:70px;
+  padding:13px;
+  border:2px dashed #8ba27d;
+  margin:12px 0;
+}
+.sentence:empty:before{
+  content:"點下方對話片段，依順序排在這裡。";
+  color:#7b8e76;
+}
+.sentence button{
+  display:block;
+  background:#dce8cb;
+  color:#2b4d43;
+  text-align:left;
+  box-shadow:none;
+  margin:8px 0;
+  width:100%;
+}
+.bank button{
+  display:block;
+  width:100%;
+  text-align:left;
+  background:#e6d4aa;
+  color:#2d4b43;
+  margin:8px 0;
+}
+.skill{
+  font:12px monospace;
+  letter-spacing:1px;
+  color:#60816a;
+}
+details{
+  background:#e8ecd6;
+  border:1px solid #adbda1;
+  padding:12px;
+  margin:13px 0;
+}
+summary{
+  cursor:pointer;
+  font-weight:bold;
+}
+.progress{
+  height:9px;
+  background:#c4d1b4;
+  margin:12px 0;
+}
+.progress div{
+  background:#4d8064;
+  height:100%;
+}
+.sceneart{
+  height:200px;
+  background:#83b9bc;
+  border:4px solid #355c53;
+  position:relative;
+  overflow:hidden;
+  image-rendering:pixelated;
+}
+.sceneart:before{
+  content:"";
+  position:absolute;
+  left:8%;
+  top:43%;
+  width:84%;
+  height:65%;
+  background:#e7d5a6;
+  box-shadow:0 -18px 0 #b6cf95;
+}
+.sceneart:after{
+  content:"DAY 2 / YOUR WORDS, YOUR JOURNEY";
+  position:absolute;
+  bottom:15px;
+  left:15px;
+  right:15px;
+  background:#294d46ed;
+  color:#fff3cc;
+  font:700 12px/1.7 monospace;
+  letter-spacing:1px;
+  padding:14px;
+}
+.house{
+  position:absolute;
+  left:40%;
+  top:31%;
+  width:88px;
+  height:66px;
+  background:#e2ba92;
+  border-top:14px solid #a96c58;
+  box-shadow:0 -9px 0 -2px #a96c58;
+}
+.house:before{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:35px;
+  width:20px;
+  height:34px;
+  background:#3e6570;
+  box-shadow:
+    -25px -8px 0 -3px #5b8b94,
+    25px -8px 0 -3px #5b8b94;
+}
+.tree{
+  position:absolute;
+  top:25%;
+  width:30px;
+  height:70px;
+  background:#756b4e;
+}
+.tree:before{
+  content:"";
+  position:absolute;
+  left:-16px;
+  top:-6px;
+  width:62px;
+  height:40px;
+  background:#49775c;
+  box-shadow:9px -15px 0 -5px #6f985f;
+}
+.passport{
+  max-width:950px;
+  margin:auto;
+}
+.passport p{white-space:pre-wrap}
+.answer{
+  background:#fffaf0;
+  border-left:3px solid #8da67e;
+  padding:12px;
+  margin:12px 0;
+}
+.tag{
+  font-size:12px;
+  padding:3px 9px;
+  background:#d9e6c8;
+}
+.mini{font-size:13px}
+.error{color:#a24829}
+footer{
+  font-size:12px;
+  color:#6a7d6b;
+  text-align:center;
+  padding:18px;
+}
+@media(max-width:850px){
+  .layout{grid-template-columns:1fr}
+  .intro{grid-template-columns:1fr}
+  .intro h1{font-size:33px}
+  nav{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:7px;
+  }
+  .station{
+    font-size:13px;
+    padding:9px;
+    margin:0;
+  }
+  .station small{font-size:11px}
+  nav h3,nav .navmeta{grid-column:1/-1}
+}
+@media(max-width:520px){
+  main{padding:17px 12px 45px}
+  .panel{padding:17px}
+  .matchgrid{gap:9px}
+  .matchcol button{font-size:14px;padding:10px}
+  nav{grid-template-columns:1fr 1fr}
+  .brand{font-size:17px}
+  h1{font-size:28px}
+  .headernote{display:none}
+}
+@media print{
+  header,footer,.no-print{display:none!important}
+  body{background:white}
+  main{padding:0}
+  .panel{box-shadow:none;break-inside:avoid}
+  .passport{max-width:none}
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="brand">
+    TRAVEL ENGLISH LAB
+    <small>小 島 第 二 天 · 互 動 學 習 護 照</small>
+  </div>
+  <small class="headernote" style="color:#cbdfbc">
+    LEARN → PRACTISE → USE IT
+  </small>
+</header>
+
+<main id="app"></main>
+
+<footer>
+  接續《島嶼假期》也可獨立使用 · 1–2 人一組 ·
+  所有線索與英文支援都在網站內
+</footer>
+
+<script>
+"use strict";
+
+const KEY = "islandStudy_v1";
+const $ = id => document.getElementById(id);
+
+const esc = value => String(value ?? "").replace(
+  /[&<>"']/g,
+  character => ({
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#39;"
+  }[character])
+);
+
+const STATIONS = [
+  {
+    id:"hotel",
+    title:"退房與寄放行李",
+    en:"Check out & leave bags",
+    time:"08:30",
+    npc:"MIA / RECEPTION",
+    goal:"確認時間、退房並詢問寄放行李。",
+    lesson:
+      "退房用 check out；詢問能不能做某件事可用 Can I…? / Could I…?。" +
+      "bags、luggage、baggage 都可以指行李。",
+
+    words:[
+      ["check out","退房"],
+      ["leave my bags","寄放我的行李"],
+      ["luggage tag","行李寄放牌"]
+    ],
+
+    notice:
+      "CORAL HOUSE / DAY 2<br>" +
+      "Breakfast: 07:00–09:00<br>" +
+      "Check-out: before 11:00<br>" +
+      "Free luggage storage: until 16:00<br>" +
+      "Keep your luggage tag when you collect your bags.",
+
+    read:[
+      {
+        q:"早餐供應到幾點？",
+        opts:["08:30","09:00","11:00"],
+        a:"09:00"
+      },
+      {
+        q:"最晚應在什麼時間前退房？",
+        opts:["09:00","11:00","16:00"],
+        a:"11:00"
+      },
+      {
+        q:"領回行李時需要出示什麼？",
+        opts:["早餐券","船班公告","luggage tag"],
+        a:"luggage tag"
+      }
+    ],
+
+    dialogue:[
+      "Traveler: I would like to check out, please.",
+      "Receptionist: Of course. What is your room number?",
+      "Traveler: Room 205. Can I leave my bags here?",
+      "Receptionist: Yes. Please collect them before four."
+    ],
+
+    compose:"你要先退房去逛街，請用英文詢問能否把行李寄放在這裡。",
+    model:"Can I leave my bags here?",
+
+    checks:[
+      {
+        re:"\\b(can|could|may)\\b",
+        tip:"先用 Can / Could / May 提出請求。"
+      },
+      {
+        re:"\\b(leave|store|keep)\\b",
+        tip:"補上寄放的動作：leave / store / keep。"
+      },
+      {
+        re:"\\b(bags?|luggage|baggage)\\b",
+        tip:"說明要寄放的是行李。"
+      }
+    ],
+
+    applyNotice:
+      "NEW SITUATION / 10:30<br>" +
+      "You want to explore until 15:00.<br>" +
+      "Late check-out until 12:00 costs NT$300.<br>" +
+      "Bag storage is free until 16:00.",
+
+    decision:{
+      q:"想逛到 15:00 又不多付房費，哪個安排最合適？",
+      opts:[
+        "付 NT$300，把房間留到 12:00",
+        "10:30 退房，寄放行李到 15:00",
+        "把行李放在碼頭不管"
+      ],
+      a:"10:30 退房，寄放行李到 15:00"
+    },
+
+    transfer:
+      "向櫃檯說明想在 15:00 領回行李。" +
+      "請用英文詢問能否寄放到三點。",
+
+    transferModel:"Could I leave my luggage here until three?",
+
+    transferChecks:[
+      {
+        re:"\\b(can|could|may)\\b",
+        tip:"請先提出詢問。"
+      },
+      {
+        re:"\\b(bags?|luggage|baggage)\\b",
+        tip:"要說到行李。"
+      },
+      {
+        re:"\\b(three|3|15:00)\\b",
+        tip:"補上新的領回時間：three / 3 / 15:00。"
+      }
+    ]
+  },
+
+  {
+    id:"directions",
+    title:"問路與交通",
+    en:"Ask for directions",
+    time:"09:30",
+    npc:"ELI / LOCAL GUIDE",
+    goal:"讀懂地標與路線，再問清楚自己要去的碼頭。",
+    lesson:
+      "問方向可說 How can I get to…?。" +
+      "給方向常用 go/walk straight、turn left、turn right。" +
+      "目的地相似時要再次確認。",
+
+    words:[
+      ["go straight","直走"],
+      ["turn left","左轉"],
+      ["across from","在……對面"]
+    ],
+
+    notice:
+      "FROM CORAL HOUSE TO THE MARKET<br>" +
+      "Go straight along Lantern Lane.<br>" +
+      "Turn left at the bakery.<br>" +
+      "The market is across from the library.<br>" +
+      "East Pier and West Pier are different places.",
+
+    read:[
+      {
+        q:"在哪一個地標左轉？",
+        opts:["hotel","bakery","pier"],
+        a:"bakery"
+      },
+      {
+        q:"市集在哪個地方的對面？",
+        opts:["library","beach","hotel"],
+        a:"library"
+      },
+      {
+        q:"East Pier 和 West Pier 是同一個地方嗎？",
+        opts:["是","不是","公告沒有提供"],
+        a:"不是"
+      }
+    ],
+
+    dialogue:[
+      "Traveler: Excuse me. How can I get to the market?",
+      "Local: Go straight and turn left at the bakery.",
+      "Traveler: Is it across from the library?",
+      "Local: Yes, it is. You cannot miss it."
+    ],
+
+    compose:
+      "你找不到市集。先禮貌地開口，" +
+      "再用英文詢問如何前往 market。",
+
+    model:"Excuse me. How can I get to the market?",
+
+    checks:[
+      {
+        re:"\\b(where|how)\\b",
+        tip:"可用 Where / How 問位置或方向。"
+      },
+      {
+        re:"\\bmarket\\b",
+        tip:"把目的地 market 說清楚。"
+      },
+      {
+        re:"\\b(is|can|get|go|way)\\b",
+        tip:"補成問句，例如 How can I get to…?"
+      }
+    ],
+
+    applyNotice:
+      "WEST BRIDGE CLOSED<br>" +
+      "Bus 2 → West Pier / NT$30 / 15 min<br>" +
+      "Bus 5 → East Pier / NT$30 / 10 min<br>" +
+      "Your return ferry leaves from WEST PIER.",
+
+    decision:{
+      q:"要去回程船的碼頭，應搭哪一班？",
+      opts:["Bus 2","Bus 5","兩班都可以"],
+      a:"Bus 2"
+    },
+
+    transfer:
+      "上車前，向司機用英文確認這班公車是否到 West Pier。",
+
+    transferModel:"Does this bus go to West Pier?",
+
+    transferChecks:[
+      {
+        re:"\\b(does|is|can|which|will)\\b",
+        tip:"要用問句再次確認。"
+      },
+      {
+        re:"\\bbus\\b",
+        tip:"要提到 bus。"
+      },
+      {
+        re:"\\bwest\\s+pier\\b",
+        tip:"請說完整目的地 West Pier，避免去錯碼頭。"
+      }
+    ]
+  },
+
+  {
+    id:"food",
+    title:"餐點與特殊需求",
+    en:"Order & explain an allergy",
+    time:"11:30",
+    npc:"SORA / SERVER",
+    goal:"不只會選餐，還能主動詢問成分並說明需求。",
+    lesson:
+      "詢問成分：Does this dish contain…?。" +
+      "說明過敏：I am allergic to…。" +
+      "要求不加某食材：without…。今天的新角色需求是花生過敏。",
+
+    words:[
+      ["contain peanuts","含有花生"],
+      ["without sauce","不加醬料"],
+      ["food allergy","食物過敏"]
+    ],
+
+    notice:
+      "LUNCH MENU<br>" +
+      "Chicken rice: NT$210 / peanut sauce served separately<br>" +
+      "Vegetable soup: NT$150 / no peanuts<br>" +
+      "Peanut noodles: NT$160 / contains peanuts<br>" +
+      "Please tell us about allergies before you order.",
+
+    read:[
+      {
+        q:"哪一餐明確寫著含花生？",
+        opts:["Chicken rice","Vegetable soup","Peanut noodles"],
+        a:"Peanut noodles"
+      },
+      {
+        q:"雞肉飯的花生醬如何提供？",
+        opts:["已混在飯裡","另外提供","菜單沒有寫"],
+        a:"另外提供"
+      },
+      {
+        q:"何時應告知過敏？",
+        opts:["吃完之後","點餐之前","付錢後才說"],
+        a:"點餐之前"
+      }
+    ],
+
+    dialogue:[
+      "Traveler: I am allergic to peanuts.",
+      "Server: Thank you for telling us. What would you like?",
+      "Traveler: Chicken rice without the peanut sauce, please.",
+      "Server: We will check the ingredients and use separate utensils."
+    ],
+
+    compose:"先用英文告知服務生：你對花生過敏。",
+    model:"I am allergic to peanuts.",
+
+    checks:[
+      {
+        re:"\\b(allergic|allergy)\\b",
+        tip:"補上 allergic / allergy，清楚說明這是過敏。"
+      },
+      {
+        re:"\\bpeanuts?\\b",
+        tip:"本關是花生 peanuts，和昨天的 shrimp 不同。"
+      }
+    ],
+
+    applyNotice:
+      "NEW ORDER<br>" +
+      "You want chicken rice.<br>" +
+      "The peanut sauce is served separately.<br>" +
+      "The server can check ingredients and prepare the meal " +
+      "with separate utensils.",
+
+    decision:{
+      q:"在確認可安全製作後，哪個要求符合你的需求？",
+      opts:[
+        "加一份花生醬",
+        "雞肉飯不加花生醬，並主動說明過敏",
+        "不告知過敏，自己把醬撥掉"
+      ],
+      a:"雞肉飯不加花生醬，並主動說明過敏"
+    },
+
+    transfer:"用英文要求雞肉飯不加花生醬。不要只寫「不要」。",
+    transferModel:"Could I have the chicken rice without peanut sauce?",
+
+    transferChecks:[
+      {
+        re:"\\b(chicken|rice)\\b",
+        tip:"要說清楚想點的餐點。"
+      },
+      {
+        re:"\\b(without|no)\\b",
+        tip:"用 without / no 表達不加。"
+      },
+      {
+        re:"\\bpeanut",
+        tip:"要說明不加的是花生醬。"
+      }
+    ]
+  },
+
+  {
+    id:"shopping",
+    title:"購物與換貨",
+    en:"Shop & exchange an item",
+    time:"13:00",
+    npc:"REN / SHOPKEEPER",
+    goal:"看懂收據與退換貨條件，說明問題並提出要求。",
+    lesson:
+      "詢價：How much is…?。換貨：Can I exchange this?。" +
+      "退費：Can I get a refund?。broken 是損壞，receipt 是收據。",
+
+    words:[
+      ["receipt","收據"],
+      ["exchange","換貨"],
+      ["refund","退款"]
+    ],
+
+    notice:
+      "ISLAND SHOP POLICY<br>" +
+      "Keep your receipt.<br>" +
+      "Faulty items: exchange or refund within 7 days.<br>" +
+      "No receipt: exchange only.<br>" +
+      "Changed your mind? Unopened items only.",
+
+    read:[
+      {
+        q:"有瑕疵的商品，退換期限是幾天？",
+        opts:["1 day","7 days","30 days"],
+        a:"7 days"
+      },
+      {
+        q:"沒有收據時，公告允許什麼？",
+        opts:["exchange only","refund only","一定能兩種都選"],
+        a:"exchange only"
+      },
+      {
+        q:"只是改變心意想退貨，商品需符合什麼條件？",
+        opts:["unopened","already used","沒有條件"],
+        a:"unopened"
+      }
+    ],
+
+    dialogue:[
+      "Traveler: Excuse me. This bag is broken.",
+      "Shopkeeper: I am sorry. Do you have the receipt?",
+      "Traveler: Yes. Can I exchange it for another one?",
+      "Shopkeeper: Certainly. Let me check the bag."
+    ],
+
+    compose:"你剛買的袋子壞了，請用英文說明損壞並詢問能否換貨。",
+    model:"This bag is broken. Can I exchange it?",
+
+    checks:[
+      {
+        re:"\\b(broken|damaged|faulty)\\b",
+        tip:"說明商品 broken / damaged / faulty。"
+      },
+      {
+        re:"\\b(exchange|replace|replacement)\\b",
+        tip:"說明你想換貨 exchange / replace。"
+      }
+    ],
+
+    applyNotice:
+      "NEW SITUATION<br>" +
+      "Your postcard set is faulty.<br>" +
+      "You lost the receipt.<br>" +
+      "The policy says: no receipt → exchange only.",
+
+    decision:{
+      q:"依店家公布條件，可以先提出哪種要求？",
+      opts:[
+        "要求退款，說店家一定要答應",
+        "詢問換一組沒有瑕疵的明信片",
+        "買新的但不告知問題"
+      ],
+      a:"詢問換一組沒有瑕疵的明信片"
+    },
+
+    transfer:
+      "改成明信片的情境：用英文說明沒有收據，並詢問能否換貨。",
+
+    transferModel:
+      "I do not have the receipt. Can I exchange these postcards?",
+
+    transferChecks:[
+      {
+        re:"\\breceipt\\b",
+        tip:"要提到收據 receipt。"
+      },
+      {
+        re:"(do not|dont|don't|no|lost|without)",
+        tip:"補上沒有或遺失收據的意思。"
+      },
+      {
+        re:"\\b(exchange|replace)\\b",
+        tip:"提出符合政策的換貨要求。"
+      }
+    ]
+  },
+
+  {
+    id:"help",
+    title:"遺失物與求助",
+    en:"Describe a problem & ask for help",
+    time:"14:00",
+    npc:"KAI / VISITOR SUPPORT",
+    goal:"把「出了問題」說清楚：遺失什麼、在哪裡、特徵是什麼。",
+    lesson:
+      "求助可以分三段：I lost… → 地點／外觀 → Could you help me?。" +
+      "不需要很難的字，但要讓對方知道可以從哪裡找起。",
+
+    words:[
+      ["lost and found","失物招領處"],
+      ["a blue case","藍色外殼"],
+      ["last seen","最後看到的位置／時間"]
+    ],
+
+    notice:
+      "LOST AND FOUND / WEST PIER<br>" +
+      "Open: 09:00–17:00<br>" +
+      "Please describe the item and where you last saw it.<br>" +
+      "Found phone: blue case, star sticker.<br>" +
+      "Please identify the phone before collecting it.",
+
+    read:[
+      {
+        q:"失物招領處位於哪裡？",
+        opts:["East Pier","West Pier","Coral House"],
+        a:"West Pier"
+      },
+      {
+        q:"招領處開放到幾點？",
+        opts:["15:00","17:00","19:00"],
+        a:"17:00"
+      },
+      {
+        q:"找到的手機有什麼特徵？",
+        opts:[
+          "blue case, star sticker",
+          "red case, flower sticker",
+          "black case, no sticker"
+        ],
+        a:"blue case, star sticker"
+      }
+    ],
+
+    dialogue:[
+      "Traveler: I lost my phone at the café.",
+      "Staff: Can you describe it?",
+      "Traveler: It has a blue case and a star sticker.",
+      "Staff: Please come to the lost and found desk."
+    ],
+
+    compose:"用英文說明你在咖啡館遺失手機，並提出求助。",
+    model:"I lost my phone at the cafe. Could you help me?",
+
+    checks:[
+      {
+        re:"\\b(lost|missing|find)\\b",
+        tip:"先說明遺失或尋找物品。"
+      },
+      {
+        re:"\\bphone\\b",
+        tip:"要說清楚遺失的是手機。"
+      },
+      {
+        re:"(caf[eé]|coffee shop)",
+        tip:"補上最後看見手機的地點：cafe / coffee shop。"
+      },
+      {
+        re:"\\bhelp\\b",
+        tip:"補一句求助，例如 Could you help me?"
+      }
+    ],
+
+    applyNotice:
+      "NEW SITUATION<br>" +
+      "Your wallet is missing.<br>" +
+      "You last saw it on Bus 2.<br>" +
+      "It is brown, with a student card inside.",
+
+    decision:{
+      q:"哪個資訊組合最能幫助工作人員？",
+      opts:[
+        "我很生氣，快點幫我找",
+        "brown wallet / Bus 2 / student card inside",
+        "只說 I lost something"
+      ],
+      a:"brown wallet / Bus 2 / student card inside"
+    },
+
+    transfer:
+      "不能照抄手機句子。請用英文說明遺失的是棕色錢包，" +
+      "最後在公車上看到，並求助。",
+
+    transferModel:
+      "I lost my brown wallet on the bus. Could you help me?",
+
+    transferChecks:[
+      {
+        re:"\\bwallet\\b",
+        tip:"這次遺失的是 wallet。"
+      },
+      {
+        re:"\\bbrown\\b",
+        tip:"補上外觀特徵 brown。"
+      },
+      {
+        re:"\\bbus\\b",
+        tip:"補上最後看見的地點 bus。"
+      },
+      {
+        re:"\\bhelp\\b",
+        tip:"記得提出求助。"
+      }
+    ]
+  },
+
+  {
+    id:"ferry",
+    title:"船班取消與改票",
+    en:"Change a travel plan",
+    time:"16:40",
+    npc:"NORA / FERRY AGENT",
+    goal:"讀懂新公告、比較抵達時間，再用英文提出改票要求。",
+    lesson:
+      "取消是 cancelled；延誤是 delayed。" +
+      "改票可說 Can I change my ticket to…?。" +
+      "先看抵達時間，別只看票價。",
+
+    words:[
+      ["cancelled","已取消"],
+      ["departure","出發時間"],
+      ["arrival","抵達時間"]
+    ],
+
+    notice:
+      "RETURN FERRY UPDATE / 16:40<br>" +
+      "18:00 Coral Direct: CANCELLED<br>" +
+      "17:30 Coral Express: arrive mainland 18:20 / Gate C / NT$520<br>" +
+      "18:20 Local Ferry: arrive mainland 19:10 / Gate B / NT$360<br>" +
+      "Your train leaves the mainland at 19:00.",
+
+    read:[
+      {
+        q:"原訂 18:00 船班發生什麼事？",
+        opts:["delayed","cancelled","正常出發"],
+        a:"cancelled"
+      },
+      {
+        q:"17:30 的船幾點抵達本島？",
+        opts:["17:30","18:20","19:10"],
+        a:"18:20"
+      },
+      {
+        q:"想銜接 19:00 火車，哪班船較合理？",
+        opts:[
+          "17:30 Coral Express",
+          "18:20 Local Ferry",
+          "兩班都一定來得及"
+        ],
+        a:"17:30 Coral Express"
+      }
+    ],
+
+    dialogue:[
+      "Traveler: I heard the six o'clock ferry is cancelled.",
+      "Agent: Yes. There is an express ferry at five thirty.",
+      "Traveler: Can I change my ticket to that ferry?",
+      "Agent: Yes. Please go to Gate C before departure."
+    ],
+
+    compose:"用英文詢問能否改票到 17:30 的船班。",
+    model:"Can I change my ticket to the 17:30 ferry?",
+
+    checks:[
+      {
+        re:"\\b(can|could|may)\\b",
+        tip:"用問句提出改票請求。"
+      },
+      {
+        re:"\\bchange\\b",
+        tip:"要說到更改 change。"
+      },
+      {
+        re:"\\bticket\\b",
+        tip:"要說明更改的是 ticket。"
+      },
+      {
+        re:"(17:30|5:30|five thirty)",
+        tip:"補上新船班時間。"
+      }
+    ],
+
+    applyNotice:
+      "FINAL CHECK<br>" +
+      "Your new ticket: 17:30 Coral Express / Gate C.<br>" +
+      "Extra payment: NT$160.<br>" +
+      "Your bags are still at Coral House. Keep your luggage tag.<br>" +
+      "You must collect the bags before boarding.",
+
+    decision:{
+      q:"離島前，哪個順序最完整？",
+      opts:[
+        "先登船，再請飯店寄行李",
+        "領行李 → 補票價差額 → 確認 Gate C → 登船",
+        "只看票價，其他不用確認"
+      ],
+      a:"領行李 → 補票價差額 → 確認 Gate C → 登船"
+    },
+
+    transfer:
+      "最後用英文向工作人員確認：" +
+      "17:30 這班船是不是從 Gate C 出發？",
+
+    transferModel:"Does the 17:30 ferry leave from Gate C?",
+
+    transferChecks:[
+      {
+        re:"\\b(does|is|will|can)\\b",
+        tip:"用問句再次確認。"
+      },
+      {
+        re:"(17:30|5:30|five thirty)",
+        tip:"說清楚船班時間。"
+      },
+      {
+        re:"gate\\s*c\\b",
+        tip:"說清楚 Gate C。"
+      }
+    ]
+  }
+];
+
+const TASKS = [
+  "讀懂資訊",
+  "關鍵語句配對",
+  "對話排序與輪讀",
+  "自己組句",
+  "換情境再應用"
+];
+
+let s = null;
+let active = 0;
+let feedback = "";
+let passed = false;
+let left = null;
+let pairs = [];
+let order = [];
+
+function B(text,action,value="",className="",disabled=false){
+  return '<button data-act="' + action +
+    '" data-val="' + esc(value) + '"' +
+    (className ? ' class="' + className + '"' : "") +
+    (disabled ? " disabled" : "") +
+    ">" + text + "</button>";
+}
+
+function save(){
+  try{
+    localStorage.setItem(KEY,JSON.stringify(s));
+  }catch(error){
+    if($("savewarn")){
+      $("savewarn").textContent =
+        "此瀏覽器無法儲存；完成後請立即下載學習護照。";
+    }
+  }
+}
+
+function load(){
+  try{
+    const value = JSON.parse(localStorage.getItem(KEY));
+
+    if(
+      value &&
+      value.version === 1 &&
+      Array.isArray(value.modules) &&
+      value.modules.length === 6
+    ){
+      return value;
+    }
+  }catch(error){}
+
+  return null;
+}
+
+function blank(){
+  return {
+    step:0,
+    done:false,
+    answers:{},
+    attempts:{},
+    hints:0,
+    drafts:{},
+    passed:{}
+  };
+}
+
+function normalize(value){
+  return value
+    .toLowerCase()
+    .replace(/[’']/g,"'")
+    .replace(/\s+/g," ")
+    .trim();
+}
+
+function checkPatterns(text,list){
+  const normalized = normalize(text);
+
+  return list
+    .filter(item => !new RegExp(item.re,"i").test(normalized))
+    .map(item => item.tip);
+}
+
+function total(){
+  return s.modules.reduce(
+    (sum,module) =>
+      sum + Object.values(module.passed).filter(Boolean).length,
+    0
+  );
+}
+
+function start(){
+  const team = $("team").value.trim();
+  const players = $("players").value;
+
+  if(!team || !players){
+    $("startError").textContent = "請填組名並選擇人數。";
+    return;
+  }
+
+  s = {
+    version:1,
+    team:team.slice(0,40),
+    players,
+    mode:$("mode").value,
+    modules:STATIONS.map(blank),
+    created:new Date().toISOString(),
+    final:{}
+  };
+
+  save();
+  openStation(0);
+}
+
+function welcome(){
+  const previous = load();
+
+  $("app").innerHTML = `
+    <div class="intro">
+      <section>
+        <span class="eyebrow">
+          AFTER THE ADVENTURE / DAY 2
+        </span>
+
+        <h1>
+          昨天，你完成了旅行。<br>
+          今天，練習自己開口。
+        </h1>
+
+        <p>
+          接著昨天的小島假期，Alex 今天要退房、
+          探索小鎮，再搭船回家。
+          這次不能只選一個答案就走：
+          你要讀資料、排對話，最後自己寫出能用的英文。
+        </p>
+
+        <div class="sceneart">
+          <div class="tree" style="left:18%"></div>
+          <div class="house"></div>
+          <div class="tree" style="right:16%;top:30%"></div>
+        </div>
+
+        <p class="note">
+          6 個學習站 × 每站 5 個任務。
+          完成前一站才能開啟下一站；已完成的站可隨時回看。
+          沒有倒數計時，提示也不扣分。
+        </p>
+      </section>
+
+      <section class="panel">
+        <span class="eyebrow">LEARNING PASSPORT</span>
+        <h2>開始第二天</h2>
+
+        <label for="team">組名／代號</label>
+        <input
+          id="team"
+          maxlength="40"
+          placeholder="可沿用昨天的組名">
+
+        <label for="players">人數</label>
+        <select id="players">
+          <option value="">請選擇</option>
+          <option value="1">1 人</option>
+          <option value="2">2 人</option>
+        </select>
+
+        <label for="mode">學習支援</label>
+        <select id="mode">
+          <option value="support">
+            基礎練習：先看句型與中文說明
+          </option>
+          <option value="challenge">
+            挑戰練習：需要時再開提示
+          </option>
+        </select>
+
+        ${B("開始互動學習","start")}
+        ${
+          previous
+            ? B("繼續上次學習","resume","","secondary")
+            : ""
+        }
+
+        <p id="startError" class="error"></p>
+
+        <small>
+          可直接接續遊戲，也能單獨進入。
+          所有資料均在本站；答案儲存在此瀏覽器，
+          最後下載學習護照繳交。沒有自動收件或錄音。
+        </small>
+      </section>
+    </div>
+  `;
+}
+
+function openStation(index){
+  if(index > 0 && !s.modules[index-1].done) return;
+
+  active = index;
+  feedback = "";
+  passed = false;
+  left = null;
+  pairs = [];
+  order = [];
+
+  render();
+}
+
+function render(){
+  const module = STATIONS[active];
+  const progress = s.modules[active];
+  const step = progress.step;
+
+  passed = !!progress.passed[step];
+
+  if(step === 2 && passed){
+    order = [0,1,2,3];
+  }
+
+  $("app").innerHTML = `
+    <span class="eyebrow">DAY 2 / ${esc(s.team)}</span>
+    <h1>小島第二天：旅遊英文學習護照</h1>
+
+    <span class="pill">${total()} / 30 任務完成</span>
+    <span class="pill">${s.players} 人一組</span>
+    <span class="pill">
+      ${s.mode === "support" ? "基礎支援" : "挑戰練習"}
+    </span>
+
+    <div class="progress">
+      <div style="width:${total()/30*100}%"></div>
+    </div>
+
+    <div class="layout">
+      <nav class="panel">
+        <h3>今天的旅程</h3>
+
+        ${
+          STATIONS.map((item,index) =>
+            B(
+              (s.modules[index].done ? "✓ " : "0"+(index+1)+" ") +
+              item.title +
+              "<small>" + item.time + " · " + item.en + "</small>",
+              "station",
+              String(index),
+              "station " +
+                (index === active ? "current" : "secondary"),
+              index > 0 && !s.modules[index-1].done
+            )
+          ).join("")
+        }
+
+        <div class="navmeta">
+          <p class="mini">
+            每站都要：理解 → 練習 → 自己表達 → 換情境使用。
+          </p>
+
+          ${B("查看學習護照","passport","","ghost")}
+          ${B("學習說明","help","","ghost")}
+          ${B("重新開始","restart","","ghost")}
+        </div>
+      </nav>
+
+      <section>
+        <div class="panel">
+          <span class="eyebrow">
+            STATION ${active+1} / ${module.en}
+          </span>
+
+          <h2>${module.title}</h2>
+          <p>${module.goal}</p>
+
+          <div class="stepbar">
+            ${
+              TASKS.map((text,index) =>
+                '<span class="step ' +
+                (
+                  index === step
+                    ? "current"
+                    : progress.passed[index]
+                      ? "done"
+                      : ""
+                ) +
+                '">' + (index+1) + ". " + text + "</span>"
+              ).join("")
+            }
+          </div>
+
+          <div id="task">
+            ${taskHTML(module,progress,step)}
+          </div>
+
+          <div
+            id="feedback"
+            class="feedback ${passed ? "ok" : ""}"
+            role="status">${
+              feedback ||
+              (
+                passed
+                  ? "這題已完成，可以回看作答或繼續下一題。"
+                  : ""
+              )
+            }</div>
+
+          <div class="btnrow">
+            ${B("檢查這個任務","check","","",passed)}
+            ${
+              B(
+                step === 4 ? "完成這一站 →" : "下一個任務 →",
+                "next","","",!passed
+              )
+            }
+            ${
+              step > 0
+                ? B("回上一題","back","","secondary")
+                : ""
+            }
+          </div>
+
+          <p class="mini">
+            ${
+              s.players === "2"
+                ? "兩人請輪流操作。第 3 題輪流讀角色，第 5 題每人都要寫一句英文。"
+                : "第 3 題請讀出完整對話，第 5 題請說出自己寫的英文。"
+            }
+          </p>
+
+          <p id="savewarn" class="error"></p>
+        </div>
+      </section>
+    </div>
+  `;
+
+  restoreDrafts();
+}
+
+function hint(module,extra=""){
+  return `
+    <details
+      ${s.mode === "support" ? "open" : ""}
+      data-hint="1">
+
+      <summary>句型、單字與中文提示</summary>
+      <p>${module.lesson}</p>
+      <p>
+        <b>參考句：</b>${esc(extra || module.model)}
+      </p>
+      <p class="mini">
+        可以換說法。系統只檢查本任務的關鍵資訊與表達；
+        完整文法與開放理由可由老師再看。
+      </p>
+    </details>
+  `;
+}
+
+function selectQ(id,question,options){
+  return `
+    <label for="${id}">${question}</label>
+    <select id="${id}" data-draft="${id}">
+      <option value="">請選擇</option>
+      ${
+        options.map(option =>
+          '<option value="' + esc(option) + '">' +
+          esc(option) + "</option>"
+        ).join("")
+      }
+    </select>
+  `;
+}
+
+function speechBtn(text){
+  return B("▶ 聽／跟讀英文","speak",text,"secondary");
+}
+
+function taskHTML(module,progress,step){
+
+  if(step === 0){
+    return `
+      <span class="skill">READING / 找資訊</span>
+
+      <div class="npc">
+        <b>${module.npc}</b>
+        Please read the information before you decide.
+      </div>
+
+      <div class="notice">${module.notice}</div>
+
+      ${speechBtn(module.notice.replace(/<br>/g,". "))}
+
+      ${
+        module.read.map((question,index) =>
+          selectQ(
+            "read"+index,
+            (index+1)+". "+question.q,
+            question.opts
+          )
+        ).join("")
+      }
+    `;
+  }
+
+  if(step === 1){
+    if(passed){
+      return `
+        <span class="skill">
+          FUNCTIONAL VOCABULARY / 語句配對
+        </span>
+
+        ${
+          module.words.map(pair =>
+            '<p class="answer">' +
+            esc(pair[0]) + " → " + esc(pair[1]) +
+            "</p>"
+          ).join("")
+        }
+
+        ${speechBtn(module.words.map(pair => pair[0]).join(". "))}
+      `;
+    }
+
+    const mixed = [2,0,1];
+
+    return `
+      <span class="skill">
+        FUNCTIONAL VOCABULARY / 語句配對
+      </span>
+
+      <p>
+        先點左邊英文，再點右邊對應意思。
+        三組全部配好才算完成。
+      </p>
+
+      <div class="matchgrid">
+        <div class="matchcol">
+          ${
+            module.words.map((pair,index) =>
+              B(esc(pair[0]),"left",String(index))
+            ).join("")
+          }
+        </div>
+
+        <div class="matchcol">
+          ${
+            mixed.map(index =>
+              B(
+                esc(module.words[index][1]),
+                "right",
+                String(index)
+              )
+            ).join("")
+          }
+        </div>
+      </div>
+
+      <p id="matchStatus" class="mini">已配對 0 / 3</p>
+    `;
+  }
+
+  if(step === 2){
+    const mixed = [2,0,3,1];
+
+    return `
+      <span class="skill">DIALOGUE / 排對話與輪讀</span>
+
+      <p>
+        點選片段排出完整對話；點上方片段可以移回去。
+      </p>
+
+      <div id="sentence" class="sentence">${
+        passed
+          ? module.dialogue.map(text =>
+              "<p>" + esc(text) + "</p>"
+            ).join("")
+          : ""
+      }</div>
+
+      <div id="bank" class="bank">
+        ${
+          passed
+            ? ""
+            : mixed.map(index =>
+                B(
+                  esc(module.dialogue[index]),
+                  "order",
+                  String(index),
+                  "secondary"
+                )
+              ).join("")
+        }
+      </div>
+
+      ${speechBtn(module.dialogue.join(" "))}
+
+      <label>
+        <input type="checkbox" id="readAloud">
+        ${
+          s.players === "2"
+            ? "我們已交換角色，兩人都輪讀過對話。"
+            : "我已讀出完整對話。"
+        }
+      </label>
+
+      ${hint(module)}
+    `;
+  }
+
+  if(step === 3){
+    return `
+      <span class="skill">
+        SPEAKING INTO WRITING / 自己組句
+      </span>
+
+      <div class="npc">
+        <b>${module.npc}</b>
+        ${esc(module.compose)}
+      </div>
+
+      <label for="compose">請寫你會說的英文</label>
+      <textarea
+        id="compose"
+        data-draft="compose"
+        placeholder="不要只填單字，試著說清楚需求。"></textarea>
+
+      ${hint(module)}
+      ${speechBtn(module.model)}
+    `;
+  }
+
+  return `
+    <span class="skill">
+      TRANSFER / 換情境再用一次
+    </span>
+
+    <div class="notice">${module.applyNotice}</div>
+
+    ${
+      selectQ(
+        "decision",
+        module.decision.q,
+        module.decision.opts
+      )
+    }
+
+    <label for="evidence">
+      根據哪一項資訊決定？請寫出具體數字、條件或公告內容。
+    </label>
+
+    <textarea
+      id="evidence"
+      data-draft="evidence"
+      placeholder="例如：指出時間、目的地或退換貨條件。可用中文。"></textarea>
+
+    <p class="note">${esc(module.transfer)}</p>
+
+    <label for="transferA">
+      ${
+        s.players === "2"
+          ? "組員 A：你會說的英文"
+          : "你會說的英文"
+      }
+    </label>
+
+    <textarea id="transferA" data-draft="transferA"></textarea>
+
+    ${
+      s.players === "2"
+        ? `
+          <label for="transferB">
+            組員 B：請用自己的說法再寫一次
+          </label>
+          <textarea
+            id="transferB"
+            data-draft="transferB"></textarea>
+        `
+        : ""
+    }
+
+    ${hint(module,module.transferModel)}
+
+    <label>
+      <input id="spoken" type="checkbox">
+      ${
+        s.players === "2"
+          ? "兩人都已說出自己的英文。"
+          : "我已說出自己的英文。"
+      }
+    </label>
+
+    ${
+      progress.done
+        ? '<p class="note">這一站已完成。你仍可修改答案並重新檢查。</p>'
+        : ""
+    }
+  `;
+}
+
+function restoreDrafts(){
+  const progress = s.modules[active];
+  const draft = progress.drafts[progress.step] || {};
+
+  for(const [id,value] of Object.entries(draft)){
+    const element = $(id);
+
+    if(!element) continue;
+
+    if(element.type === "checkbox"){
+      element.checked = !!value;
+    }else{
+      element.value = value;
+    }
+  }
+}
+
+function drafts(){
+  const progress = s.modules[active];
+
+  const draft =
+    progress.drafts[progress.step] ||
+    (progress.drafts[progress.step] = {});
+
+  document
+    .querySelectorAll("#task input,#task textarea,#task select")
+    .forEach(element => {
+      if(element.id){
+        draft[element.id] =
+          element.type === "checkbox"
+            ? element.checked
+            : element.value;
+      }
+    });
+
+  save();
+}
+
+function showFeedback(text,ok=false){
+  feedback = text;
+
+  const element = $("feedback");
+
+  if(!element) return;
+
+  element.textContent = text;
+  element.className = "feedback " + (ok ? "ok" : "");
+}
+
+function pairLeft(index){
+  if(pairs.includes(index)) return;
+
+  left = index;
+
+  document
+    .querySelectorAll('[data-act="left"]')
+    .forEach(button => {
+      button.classList.toggle(
+        "selected",
+        Number(button.dataset.val) === index
+      );
+    });
+}
+
+function pairRight(index){
+  if(left === null){
+    showFeedback("先選左邊的英文。");
+    return;
+  }
+
+  if(left !== index){
+    const progress = s.modules[active];
+
+    progress.attempts[1] =
+      (progress.attempts[1] || 0) + 1;
+
+    save();
+
+    showFeedback(
+      "意思還不相符。想想這句話在旅行中用來做什麼，再配一次。"
+    );
+
+    return;
+  }
+
+  pairs.push(index);
+  left = null;
+
+  document
+    .querySelectorAll('[data-act="left"],[data-act="right"]')
+    .forEach(button => {
+      if(pairs.includes(Number(button.dataset.val))){
+        button.disabled = true;
+        button.classList.add("paired");
+      }
+
+      button.classList.remove("selected");
+    });
+
+  $("matchStatus").textContent =
+    "已配對 " + pairs.length + " / 3";
+
+  showFeedback(
+    pairs.length === 3
+      ? "三組都配好了。按「檢查這個任務」儲存。"
+      : "這組配對正確，繼續下一組。",
+    true
+  );
+}
+
+function orderClick(index){
+  if(order.includes(index)){
+    order = order.filter(value => value !== index);
+  }else{
+    order.push(index);
+  }
+
+  const module = STATIONS[active];
+
+  $("sentence").innerHTML = order.map(value =>
+    B(
+      esc(module.dialogue[value]),
+      "order",
+      String(value),
+      "secondary"
+    )
+  ).join("");
+
+  $("bank").innerHTML = [2,0,3,1].map(value =>
+    B(
+      esc(module.dialogue[value]),
+      "order",
+      String(value),
+      "secondary",
+      order.includes(value)
+    )
+  ).join("");
+}
+
+function checkTask(){
+  const module = STATIONS[active];
+  const progress = s.modules[active];
+  const step = progress.step;
+
+  drafts();
+
+  progress.attempts[step] =
+    (progress.attempts[step] || 0) + 1;
+
+  let error = "";
+  let answer = {};
+
+  if(step === 0){
+    const values = module.read.map(
+      (question,index) => $("read"+index).value
+    );
+
+    const wrong = module.read
+      .map((question,index) =>
+        values[index] === question.a ? -1 : index+1
+      )
+      .filter(value => value > 0);
+
+    if(wrong.length){
+      error =
+        "第 " + wrong.join("、") +
+        " 題還需要確認。請回到公告找對應資訊。";
+    }
+
+    answer = {values};
+  }
+
+  if(step === 1){
+    if(pairs.length !== 3 && !progress.passed[1]){
+      error = "請完成三組語句配對。";
+    }
+
+    answer = {pairs:module.words};
+  }
+
+  if(step === 2){
+    const wrongOrder =
+      order.length !== 4 ||
+      order.some((value,index) => value !== index);
+
+    if(wrongOrder && !progress.passed[2]){
+      error =
+        "對話順序還不完整。先提出需求，" +
+        "再讓對方詢問，接著補資料，最後確認。";
+    }else if(!$("readAloud").checked){
+      error = "請先完成輪讀，再勾選確認。";
+    }
+
+    answer = {
+      dialogue:module.dialogue,
+      readAloud:$("readAloud").checked
+    };
+  }
+
+  if(step === 3){
+    const value = $("compose").value.trim();
+    const missing = checkPatterns(value,module.checks);
+
+    if(missing.length){
+      error = missing.join(" ");
+    }
+
+    answer = {english:value};
+  }
+
+  if(step === 4){
+    const decision = $("decision").value;
+    const evidence = $("evidence").value.trim();
+    const englishA = $("transferA").value.trim();
+    const englishB = s.players === "2"
+      ? $("transferB").value.trim()
+      : "";
+
+    if(decision !== module.decision.a){
+      error =
+        "請重新比對新情境，這個選擇還不符合公告條件。";
+    }else if(evidence.length < 5){
+      error =
+        "請寫出用來判斷的具體資訊，不只寫「因為比較好」。";
+    }else{
+      const missingA = checkPatterns(
+        englishA,
+        module.transferChecks
+      );
+
+      const missingB = s.players === "2"
+        ? checkPatterns(englishB,module.transferChecks)
+        : [];
+
+      if(missingA.length){
+        error =
+          (s.players === "2" ? "組員 A：" : "") +
+          missingA.join(" ");
+      }else if(missingB.length){
+        error = "組員 B：" + missingB.join(" ");
+      }else if(!$("spoken").checked){
+        error = "請每人先說出自己的英文，再勾選確認。";
+      }
+    }
+
+    answer = {
+      decision,
+      evidence,
+      englishA,
+      englishB,
+      spoken:$("spoken").checked
+    };
+  }
+
+  if(error){
+    progress.answers[step] = {
+      ...answer,
+      complete:false
+    };
+
+    save();
+    showFeedback(error);
+    return;
+  }
+
+  progress.answers[step] = {
+    ...answer,
+    complete:true
+  };
+
+  progress.passed[step] = true;
+  passed = true;
+
+  if(step === 4){
+    progress.done = true;
+  }
+
+  save();
+
+  const text = step >= 3
+    ? "任務需要的關鍵資訊與表達都出現了！" +
+      "再讀一次確認語意，再前往下一題。"
+    : "完成！請想想這個表達在真正旅行時會用在哪裡。";
+
+  showFeedback(text,true);
+
+  document.querySelector('[data-act="check"]').disabled = true;
+  document.querySelector('[data-act="next"]').disabled = false;
+}
+
+function next(){
+  const progress = s.modules[active];
+
+  if(!progress.passed[progress.step]) return;
+
+  if(progress.step < 4){
+    progress.step++;
+    feedback = "";
+    left = null;
+    pairs = [];
+    order = [];
+
+    save();
+    render();
+    window.scrollTo(0,0);
+  }else{
+    progress.done = true;
+    save();
+
+    if(active < 5){
+      stationDone();
+    }else{
+      passport();
+    }
+  }
+}
+
+function stationDone(){
+  const module = STATIONS[active];
+  const answer = s.modules[active].answers[4];
+
+  $("app").innerHTML = `
+    <section
+      class="panel"
+      style="max-width:800px;margin:30px auto">
+
+      <span class="eyebrow">
+        STAMP EARNED / STATION ${active+1}
+      </span>
+
+      <h1>${module.title} · 完成</h1>
+
+      <p>
+        你不只認得答案，也完成了一個新情境的英文表達。
+      </p>
+
+      <div class="notice">
+        ${esc(answer.englishA)}<br>
+        ${esc(answer.englishB || "")}
+      </div>
+
+      <p>下一站：${STATIONS[active+1].title}</p>
+
+      ${B("前往下一站 →","station",String(active+1))}
+      ${B("查看學習護照","passport","","secondary")}
+    </section>
+  `;
+}
+
+function back(){
+  const progress = s.modules[active];
+
+  if(progress.step > 0){
+    drafts();
+
+    progress.step--;
+    feedback = "";
+    left = null;
+    pairs = [];
+    order = [];
+
+    save();
+    render();
+  }
+}
+
+function passportHTML(){
+  const done = s.modules.filter(module => module.done).length;
+
+  return `
+    <article class="passport">
+      <span class="eyebrow">
+        TRAVEL ENGLISH LEARNING PASSPORT
+      </span>
+
+      <h1>${esc(s.team)} 的旅遊英文學習護照</h1>
+
+      <p>
+        ${s.players} 人一組 · 完成 ${done} / 6 站 ·
+        ${total()} / 30 個任務
+      </p>
+
+      <p class="mini">
+        配對、排序與資訊題依標準答案檢查；
+        英文輸入只檢查關鍵表達。
+        情境理由與完整英文語意請老師檢視。
+      </p>
+
+      ${
+        STATIONS.map((module,index) => {
+          const progress = s.modules[index];
+          const compose = progress.answers[3];
+          const transfer = progress.answers[4];
+
+          const attempts = Object.values(progress.attempts)
+            .reduce((sum,value) => sum+value,0);
+
+          return `
+            <section class="panel">
+              <span class="tag">
+                ${progress.done ? "完成" : "進行中"}
+              </span>
+
+              <h2>${index+1}. ${module.title}</h2>
+
+              <p>
+                <b>本站目標：</b>${module.goal}
+              </p>
+
+              <div class="answer">
+                <b>自己組句</b>
+                <p>${esc(compose?.english || "尚未作答")}</p>
+              </div>
+
+              <div class="answer">
+                <b>換情境的決定與依據</b>
+                <p>${esc(transfer?.decision || "尚未作答")}
+${esc(transfer?.evidence || "")}</p>
+
+                <b>組員 A / 個人英文</b>
+                <p>${esc(transfer?.englishA || "尚未作答")}</p>
+
+                ${
+                  s.players === "2"
+                    ? `
+                      <b>組員 B 英文</b>
+                      <p>${esc(transfer?.englishB || "尚未作答")}</p>
+                    `
+                    : ""
+                }
+              </div>
+
+              <p class="mini">
+                任務檢查／配對修正次數：${attempts} ·
+                提示開啟次數：${progress.hints}（不扣分）
+              </p>
+            </section>
+          `;
+        }).join("")
+      }
+
+      ${
+        s.final?.next
+          ? `
+            <section class="panel">
+              <h2>帶回真實旅行</h2>
+              <p>${esc(s.final.next)}</p>
+            </section>
+          `
+          : ""
+      }
+    </article>
+  `;
+}
+
+function passport(){
+  draftsIfNeeded();
+
+  $("app").innerHTML = `
+    <div class="no-print panel">
+      <h2>把學到的帶回真實旅行</h2>
+
+      <label for="finalNext">
+        下次出門前，你會多確認什麼？
+        遇到變動時，你會用哪一句英文？
+      </label>
+
+      <textarea id="finalNext">${esc(s.final.next || "")}</textarea>
+
+      ${B("儲存最後回顧","finalSave")}
+      ${B("下載學習護照","download","","secondary")}
+      ${B("列印／存成 PDF","print","","secondary")}
+      ${B("回學習站","return","","secondary")}
+
+      <p id="finalMsg" role="status" class="mini">
+        完成後請依老師指定方式繳交。網站不會自動傳送。
+      </p>
+    </div>
+
+    ${passportHTML()}
+  `;
+}
+
+function draftsIfNeeded(){
+  if($("task")) drafts();
+}
+
+function download(){
+  if($("finalNext")){
+    s.final.next = $("finalNext").value.trim();
+    save();
+  }
+
+  const text = `
+    <!doctype html>
+    <html lang="zh-Hant">
+    <head>
+      <meta charset="utf-8">
+      <title>Travel English Passport</title>
+      <style>
+        body{
+          max-width:900px;
+          margin:auto;
+          padding:24px;
+          font:16px/1.8 Arial,sans-serif;
+          color:#294d43;
+        }
+        .panel{
+          border:1px solid #abc0a2;
+          margin:18px 0;
+          padding:20px;
+          break-inside:avoid;
+        }
+        .answer{
+          background:#f3f5e9;
+          padding:12px;
+          margin:12px 0;
+        }
+        p{white-space:pre-wrap}
+        .mini{font-size:13px}
+      </style>
+    </head>
+    <body>${passportHTML()}</body>
+    </html>
+  `;
+
+  const url = URL.createObjectURL(
+    new Blob([text],{type:"text/html;charset=utf-8"})
+  );
+
+  const link = document.createElement("a");
+
+  link.href = url;
+  link.download = "Travel_English_Passport.html";
+
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+
+  setTimeout(() => URL.revokeObjectURL(url),1000);
+}
+
+function help(){
+  draftsIfNeeded();
+
+  $("app").innerHTML = `
+    <section
+      class="panel"
+      style="max-width:800px;margin:auto">
+
+      <h1>這一段怎麼學？</h1>
+
+      <ol>
+        <li>每站先讀英文公告，找出三項資訊。</li>
+        <li>完成三組功能語句配對。</li>
+        <li>
+          把四句對話排好，分角色輪讀。
+          需要時可按英文朗讀。
+        </li>
+        <li>依情境自己寫一句英文，可用不同說法。</li>
+        <li>
+          換一份新資料做決定，寫具體依據，
+          再各寫一句能用的英文。
+        </li>
+      </ol>
+
+      <p>
+        提示不扣分，不用比速度。
+        第一版遊戲不用重玩；這是第二天的接續學習。
+      </p>
+
+      <p>
+        英文輸入採關鍵表達檢查，
+        完整文法與自由理由可由老師檢視。
+        朗讀使用瀏覽器內建功能；
+        若裝置不支援，照畫面文字輪讀即可。
+      </p>
+
+      ${B("回到學習站","return")}
+    </section>
+  `;
+}
+
+function speak(text){
+  if(!("speechSynthesis" in window)){
+    showFeedback(
+      "此裝置不支援英文朗讀，請依畫面文字輪讀。"
+    );
+    return;
+  }
+
+  window.speechSynthesis.cancel();
+
+  const utterance = new SpeechSynthesisUtterance(text);
+
+  utterance.lang = "en-US";
+  utterance.rate = .85;
+
+  utterance.onerror = () => {
+    showFeedback(
+      "英文朗讀暫時無法使用，可以直接依畫面輪讀。"
+    );
+  };
+
+  window.speechSynthesis.speak(utterance);
+}
+
+function invalidateCurrent(){
+  if(!passed) return;
+
+  const progress = s.modules[active];
+
+  progress.passed[progress.step] = false;
+  progress.done = false;
+  passed = false;
+
+  save();
+
+  const checkButton = document.querySelector('[data-act="check"]');
+  const nextButton = document.querySelector('[data-act="next"]');
+
+  if(checkButton) checkButton.disabled = false;
+  if(nextButton) nextButton.disabled = true;
+
+  showFeedback("你修改了答案，請再檢查一次。");
+}
+
+document.addEventListener("click",event => {
+  const button = event.target.closest("button[data-act]");
+
+  if(!button || button.disabled) return;
+
+  const action = button.dataset.act;
+  const value = button.dataset.val || "";
+
+  if(action === "start"){
+    start();
+
+  }else if(action === "resume"){
+    s = load();
+
+    if(s){
+      const index = s.modules.findIndex(module => !module.done);
+
+      if(index < 0) passport();
+      else openStation(index);
+    }
+
+  }else if(action === "station"){
+    openStation(Number(value));
+
+  }else if(action === "left"){
+    pairLeft(Number(value));
+
+  }else if(action === "right"){
+    pairRight(Number(value));
+
+  }else if(action === "order"){
+    orderClick(Number(value));
+
+  }else if(action === "check"){
+    checkTask();
+
+  }else if(action === "next"){
+    next();
+
+  }else if(action === "back"){
+    back();
+
+  }else if(action === "passport"){
+    passport();
+
+  }else if(action === "return"){
+    openStation(active);
+
+  }else if(action === "help"){
+    help();
+
+  }else if(action === "download"){
+    download();
+
+  }else if(action === "print"){
+    window.print();
+
+  }else if(action === "finalSave"){
+    s.final.next = $("finalNext").value.trim();
+    save();
+
+    $("finalMsg").textContent =
+      "已儲存。下載學習護照會包含這段回顧。";
+
+  }else if(action === "speak"){
+    speak(value);
+
+  }else if(
+    action === "restart" &&
+    confirm("清除這台瀏覽器的接續學習紀錄並重來？")
+  ){
+    try{
+      localStorage.removeItem(KEY);
+    }catch(error){}
+
+    s = null;
+    welcome();
+  }
+});
+
+document.addEventListener("input",event => {
+  if(s && event.target.closest("#task")){
+    drafts();
+    invalidateCurrent();
+  }
+});
+
+document.addEventListener("change",event => {
+  if(s && event.target.closest("#task")){
+    drafts();
+    invalidateCurrent();
+  }
+});
+
+document.addEventListener("toggle",event => {
+  if(
+    s &&
+    event.target.matches("details[data-hint]") &&
+    event.target.open
+  ){
+    s.modules[active].hints++;
+    save();
+  }
+},true);
+
+welcome();
+</script>
+</body>
+</html>
